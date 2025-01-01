@@ -21,7 +21,7 @@ const Bottles = () => {
 
   // load cart from localstorage
   useEffect(() => {
-    console.log("called the useEffect", bottles.length);
+    // console.log("called the useEffect", bottles.length);
 
     if (bottles.length) {
       const storedCart = getStoredCart();
@@ -37,7 +37,7 @@ const Bottles = () => {
         }
       }
 
-      console.log("saved cart", savedCart);
+      //   console.log("saved cart", savedCart);
       setCart(savedCart);
     }
   }, [bottles]);
