@@ -18,4 +18,11 @@ const AddToLS = (id) => {
   saveCartToLS(cart);
 };
 
-export { AddToLS, getStoredCart };
+const removeFromLS = (id) => {
+  const cart = getStoredCart();
+  // removing all the same ids
+  const remaining = cart.filter((idx) => idx !== id);
+  saveCartToLS(remaining);
+};
+
+export { AddToLS, getStoredCart, removeFromLS };
