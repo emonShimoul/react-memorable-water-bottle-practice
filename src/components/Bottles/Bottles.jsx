@@ -18,9 +18,22 @@ const Bottles = () => {
   useEffect(() => {
     console.log("called the useEffect", bottles.length);
 
-    if (bottles.length > 0) {
+    if (bottles.length) {
       const storedCart = getStoredCart();
-      console.log(storedCart);
+      //   console.log(storedCart, bottles);
+
+      const savedCart = [];
+      for (const id of storedCart) {
+        // console.log(id);
+        const bottle = bottles.find((bottle) => bottle.id === id);
+
+        if (bottle) {
+          savedCart.push(bottle);
+        }
+      }
+
+      console.log("saved cart", savedCart);
+      setCart(savedCart);
     }
   }, [bottles]);
 
